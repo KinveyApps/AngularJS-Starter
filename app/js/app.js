@@ -13,8 +13,8 @@ angular.module('myApp', [
 ])
 .config(['$kinveyProvider', '$stateProvider', function($kinveyProvider, $stateProvider) {
   $kinveyProvider.init({
-    appKey: 'kid_WJt3WXdOpx',
-    appSecret: '7cfd74e7af364c8f90b116c835f92e7d'
+    appKey: '',
+    appSecret: ''
   });
 
   $stateProvider.state({
