@@ -1,24 +1,26 @@
-<div id="books"><div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th>Title</th>
-            <th>Author</th>
-            <th>ISBN</th>
-            <th>Review</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr ng-repeat="book in books track by book._id">
-            <td>{{book.title}}</td>
-            <td>{{book.author}}</td>
-            <td>{{book.isbn}}</td>
-            <td>{{book.review}}</td>
+<div id="books">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Author</th>
+              <th>ISBN</th>
+              <th>Review</th>
             </tr>
-          </tbody>
-        </table>
+          </thead>
+          <tbody>
+            <tr ng-repeat="book in books track by book._id">
+              <td>{{book.title}}</td>
+              <td>{{book.author}}</td>
+              <td>{{book.isbn}}</td>
+              <td>{{book.review}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   </div>
