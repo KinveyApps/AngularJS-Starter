@@ -26,11 +26,10 @@ angular.module('app', [
 .run(['$rootScope', '$kinvey', '$state', function($rootScope, $kinvey, $state) {
   $rootScope.$on('$stateChangeStart', function(event, toState, toParams) {
     if (kinveyInitialized === false) {
-      event.preventDefault(); // Stop the location change
-      // Initialize Kinvey
+      event.preventDefault();
       $kinvey.initialize({
-        appKey: 'kid_WJt3WXdOpx',
-        appSecret: '7cfd74e7af364c8f90b116c835f92e7d'
+        appKey: '',
+        appSecret: ''
       }).then(function(activeUser) {
         kinveyInitialized = true;
         $state.go(toState, toParams);
