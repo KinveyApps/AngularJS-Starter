@@ -13,6 +13,7 @@ angular.module('app.upload', [
   });
 }])
 .controller('UploadCtrl', ['$scope', '$kinvey', function($scope, $kinvey) {
+  $scope.public = false;
   $scope.showSuccess = false;
   $scope.showError = false;
 
@@ -21,10 +22,10 @@ angular.module('app.upload', [
     $scope.showError = false;
 
     var file = document.getElementById('file').files[0];
-    var filename = $scope.filename || $scope.filename !== '' ? filename : file.name;
+    var filename = $scope.filename && $scope.filename !== '' ? $scope.filename : file.name;
 
     if (file) {
-      $kinvey.Files.upload(file, { filename: filename })
+      $kinvey.Files.upload(file, { filename: filename, public: $scope.public })
         .then(function() {
           $scope.showSuccess = true;
           $scope.$digest();
