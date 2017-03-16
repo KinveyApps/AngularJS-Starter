@@ -28,12 +28,16 @@ angular.module('app', [
     if (kinveyInitialized === false) {
       event.preventDefault();
       $kinvey.initialize({
-        appKey: '',
-        appSecret: ''
-      }).then(function(activeUser) {
-        kinveyInitialized = true;
-        $state.go(toState, toParams);
-      });
+        appKey: '<appKey>',
+        appSecret: '<appSecret>'
+      })
+        .then(function(activeUser) {
+          kinveyInitialized = true;
+          $state.go(toState, toParams);
+        })
+        .catch(function(error) {
+          console.log(error.message, error.name);
+        });
     } else if (toState.requiresActiveUser === true && !$kinvey.User.getActiveUser()) {
       event.preventDefault();
       $state.go('login');

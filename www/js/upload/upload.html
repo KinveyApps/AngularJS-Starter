@@ -8,12 +8,13 @@
         <div class="panel-body">
           <form ng-submit="upload()">
             <div class="form-group">
-              <label for="filename">File Name</label>
-              <input type="text" class="form-control" id="filename" placeholder="File Name" ng-model="filename">
-            </div>
-            <div class="form-group">
               <label for="file">File input</label>
               <input type="file" id="file">
+            </div>
+            <div class="form-group">
+              <label for="filename">File Name <small>(optional)</small></label>
+              <input type="text" class="form-control" id="filename" placeholder="File Name" ng-model="filename">
+              <span class="help-block">The file name of the file will be used if no file name is provided.</span>
             </div>
             <div class="checkbox">
               <label>
